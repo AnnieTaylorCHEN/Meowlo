@@ -70,14 +70,6 @@ app.get('/weather', (req, res) => {
 })
 
 
-app.get('/products/*', (req, res) => {
-    res.render('404', {
-        title: '404 page | products',
-        msg: 'Products you search not found. Try another page?',
-        
-    })
-})
-
 app.get('*', (req, res) => {
     res.render('404', {
         title: 'Opps, something\'s wrong.',
