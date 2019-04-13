@@ -25,8 +25,9 @@
                 <div id ="remaining-time"></div>
                 <button id="reset" class="button">Reset</button>
             </div>
-    <!--The browser-based to-do list-->
         </section>
+    <!--The browser-based to-do list-->
+        <section>
             <div class="todo">
                 <h1>browser-based To-to List</h1>
                 <p>Write your to-do list, nobody else will see those but you (unless you share devices with others!) as this will be saved in your browser only.</p>
@@ -43,13 +44,39 @@
                     <button id="todo-button" class="button" type="submit">Add new item</button>
                 </form>       
             </div>
-        <section>
-
         </section>
+    <!--The Meow Song Maker-->
+      <section class="meow">
+        <div class="meow__info">
+          <h1>The Meow Song Maker</h1>
+          <h3>Tap your paws to make a kitty song!</h3>
+        </div>
+        
+        <div class="meow-balls"></div>
+
+        <div class="keys">
+          <div class="key1">
+            <audio src="./sounds/meow1.mp3" class="sound"></audio>
+          </div>
+          <div class="key2">
+            <audio src="./sounds/meow2.mp3" class="sound"></audio>
+          </div>
+          <div class="key3">
+            <audio src="./sounds/meow3.mp3" class="sound"></audio>
+          </div>
+          <div class="key4">
+            <audio src="./sounds/meow4.mp3" class="sound"></audio>
+          </div>
+          <div class="key5">
+            <audio src="./sounds/meow5.mp3" class="sound"></audio>
+          </div>
+        </div> 
+      </section>
         
     {{>footer}}
     <script src="js/hangman.js"></script>
     <script src="js/uuidv4.js"></script>
     <script src="js/todo.js"></script>
+    <script src="js/meow.js"></script>
 </body>
 </html>

@@ -89,6 +89,84 @@
     margin-top: 1rem;
 }
 
+/*the meow song maker*/
+.meow {
+    background-image: url(/img/meowsong.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 800px;
+    position: relative;
+}
+
+.meow__info{
+    padding: 3rem;
+}
+
+.keys {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    z-index: 2
+}
+
+.keys > div {
+    height: 100px;
+    width: 100px;
+    flex: 1;
+    cursor: pointer;
+    border-radius: 30px 50px;
+}
+
+.key1 {
+    background: var(--blue);
+}
+
+.key2 {
+    background: var(--yellow);
+}
+
+.key3 {
+    background: var(--red);
+}
+
+.key4 {
+    background: var(--light-yellow);
+}
+
+.key5 {
+    background: var(--light-blue);
+}
+
+
+.meow-balls > div {
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    transform: scale(1);
+    z-index: 1;
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0%;
+        left: 20%;
+    }
+
+    50% {
+        bottom: 30%;
+        left: 50%;
+    }
+
+    100% {
+        bottom: 0%;
+        left: 80%;
+    }
+}
+
 @media only screen and (min-width: 500px){
     .hangman__info{
         padding: 4rem;
