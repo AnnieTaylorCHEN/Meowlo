@@ -23,6 +23,10 @@ form {
     padding-top: 1rem;
 }
 
+.paw:hover{
+    filter: invert(100%);
+}
+
 .weather-app__info{
     background-color: var(--light-yellow);
     padding: 1rem;
