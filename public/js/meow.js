@@ -2,26 +2,20 @@ window.addEventListener('load', () => {
     const sounds = document.querySelectorAll('.sound')
     const keys = document.querySelectorAll('.keys div')
     const meowBalls = document.querySelector(".meow-balls");
-    const colors = [
-      'var(--blue)',
-      'var(--yellow)',
-      'var(--red)',
-      'var(--light-yellow)',
-      'var(--light-blue)'
-    ]
-  
+
     keys.forEach((key, index) => {
+      const color = window.getComputedStyle(key).getPropertyValue('background-color')
       key.addEventListener('click', () => {
         sounds[index].currentTime = 0
         sounds[index].play()
-        createBalls(index)
+        createBalls(color)
       })
     })
-  
-    const createBalls = (index) => {
+
+    const createBalls = (color) => {
       const ball = document.createElement('div')
       meowBalls.appendChild(ball)
-      ball.style.backgroundColor = colors[index]
+      ball.style.backgroundColor = color
       ball.style.animation = `jump 1s ease-out`
       ball.addEventListener('animationend', function () {
         meowBalls.removeChild(this)
