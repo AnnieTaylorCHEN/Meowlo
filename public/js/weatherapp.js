@@ -1,5 +1,5 @@
 const weatherForm = document.querySelector('form')
-const search= document.querySelector('input')
+const search = document.querySelector('input')
 const weatherSearchTitle = document.getElementById('weather-search-title')
 const weatherSearchResults = document.getElementById('weather-search-results')
 

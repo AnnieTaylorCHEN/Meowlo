@@ -21,8 +21,8 @@
             </div>
 
             <div class="wrapper">
-                <div id="your-guess" class="puzzle"></div>
-                <div id ="remaining-time"></div>
+                <div id="hangman-word" class="puzzle"></div>
+                <div id ="hangman-status"></div>
                 <button id="reset" class="button">Reset</button>
             </div>
         </section>
@@ -42,7 +42,7 @@
                 <form id="new-todo">
                     <input id="input-text" class="input" type="text" placeholder="type a new list for todos" name="text">
                     <button id="todo-button" class="button" type="submit">Add new item</button>
-                </form>       
+                </form>
             </div>
         </section>
     <!--The Meow Song Maker-->
@@ -51,7 +51,7 @@
           <h1>The Meow Song Maker</h1>
           <h3>Tap your paws to make a kitty song!</h3>
         </div>
-        
+
         <div class="meow-balls"></div>
 
         <div class="keys">
@@ -70,9 +70,9 @@
           <div class="key5">
             <audio src="./sounds/meow5.mp3" class="sound"></audio>
           </div>
-        </div> 
+        </div>
       </section>
-        
+
     {{>footer}}
     <script src="js/hangman.js"></script>
     <script src="js/uuidv4.js"></script>
