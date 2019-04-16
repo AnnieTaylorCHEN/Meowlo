@@ -26,7 +26,7 @@ hbs.registerPartials(path.join(__dirname, '../templates/partials'))
 app.get('', (req, res) => {
     res.render('index', {
         title: 'Meowlo'
-        
+
     })
 })
 
@@ -42,38 +42,31 @@ app.get('/products', (req, res) => {
     })
 })
 
-app.get('/weather', (req, res) => {
+app.get('/weather', async (req, res) => {
     if (!req.query.address){
         return res.send({
             error: 'You must provide an address.'
         })
     }
 
-    geocode(req.query.address, mapboxKey, (error, {latitude, longitude, location} = {}) => {
-        if (error){
-            return res.send({error})
-        }
-
-        forecast(latitude, longitude, darkskyKey, (error, forecastData) => {
-            if (error) {
-                return res.send({error})
-            }
-
-            res.send({
-                forecast: forecastData,
-                location,
-                address: req.query.address
-            })
+    try {
+        const { latitude, longitude, location } = await geocode(req.query.address, mapboxKey)
+        const forecastData = await forecast(latitude, longitude, darkskyKey)
+        res.send({
+            forecast: forecastData,
+            location,
+            address: req.query.address
         })
-    })
-   
+    } catch(error) {
+        res.send({ error })
+    }
 })
 
 
 app.get('*', (req, res) => {
     res.render('404', {
-        title: 'Opps, something\'s wrong.',
-        msg: 'This doesn\'t exist, try another page?',
+        title: "Oops, something's wrong.",
+        msg: "This doesn't exist, try another page?",
     })
 })
 

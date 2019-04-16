@@ -4,13 +4,14 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "node src/app.js"
+    "start": "node src/app.js",
+    "devStart": "nodemon src/app.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
-    "hbs": "^4.0.3",
+    "hbs": "^4.0.4",
     "request": "^2.88.0",
     "uuid": "^3.3.2"
   },

@@ -1,26 +1,23 @@
-console.log('client side js is loaded!')
-
-
 const weatherForm = document.querySelector('form')
-const search= document.querySelector('input')
-const msg1 = document.querySelector('#msg1')
-const msg2 = document.querySelector('#msg2')
+const search = document.querySelector('input')
+const weatherSearchTitle = document.getElementById('weather-search-title')
+const weatherSearchResults = document.getElementById('weather-search-results')
 
-weatherForm.addEventListener('submit', (e) => {
+weatherForm.addEventListener('submit', e => {
     e.preventDefault()
     const location = search.value
-    
-    msg1.textContent = 'Loading...'
-    msg2.textContent = ''
+
+    weatherSearchTitle.textContent = 'Loading...'
+    weatherSearchResults.textContent = ''
 
     fetch(`/weather?address=${location}`).then((response) => {
-    response.json().then((data) => {
-        if (data.error){
-            msg1.textContent = data.error
-        } else {
-            msg1.textContent = `Your location is ${data.location}.`
-            msg2.textContent = data.forecast
-        }
+        response.json().then((data) => {
+            if (data.error){
+                weatherSearchTitle.textContent = data.error
+            } else {
+                weatherSearchTitle.textContent = `Your location is ${data.location}.`
+                weatherSearchResults.textContent = data.forecast
+            }
+        })
     })
-})
 })

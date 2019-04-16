@@ -179,7 +179,7 @@
         padding: 2rem;
         margin: 2rem;
     }
-    
+
     span {
         border-bottom: 1px solid white;
         display: inline-block;
@@ -192,13 +192,13 @@
         text-align: center;
         text-transform: uppercase;
     }
-    
+
     .puzzle {
         display: flex;
         margin-bottom: 2rem;
     }
-    
-    #remaining-time {
+
+    #hangman-status {
         color:white;
         font-size:1.3rem;
         margin-bottom: 1rem;
