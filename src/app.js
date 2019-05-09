@@ -38,7 +38,13 @@ app.get('/about', (req, res) => {
 
 app.get('/products', (req, res) => {
     res.render('products', {
-        title: 'Meowlo Products'
+        title: 'Meowlo Games'
+    })
+})
+
+app.get('/products/tools', (req, res) => {
+    res.render('tools', {
+        title: 'Meowlo Tools'
     })
 })
 

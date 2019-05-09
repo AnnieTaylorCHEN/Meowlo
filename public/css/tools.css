@@ -1,0 +1,77 @@
+/*to-do list*/
+.todo {
+    background-color: var(--light-yellow);
+    padding: 2rem;
+}
+
+.actions {
+    background-color: var(--blue);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    margin: 1rem auto;
+}
+
+.input {
+    border: none;
+    outline:none;
+    height: 2rem;
+    margin-right: 1.6rem;
+    padding: 0.4rem 0.8rem;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox > input {
+    height: 1.3rem;
+    width: 1.3rem;
+    margin-right: 0.4rem;
+}
+
+.checkbox--inner{
+    height: 1.3rem;
+    width: 1.3rem;
+}
+
+.list-item__container {
+    display: flex;
+    align-items: center;
+}
+
+.list-item__container > *:first-child {
+    margin-right: .8rem;
+}
+
+.list-item {
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid var(--blue);
+    margin: 1rem 0;
+    transition: background .3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.list-item:hover {
+    background-color: var(--yellow);
+}
+
+.empty-message{
+    font-size: 1.3rem;
+}
+
+#todo-button{
+    margin-top: 1rem;
+}
+
+@media only screen and (min-width: 500px){
+    .actions{
+        flex-direction: row;
+    }
+}

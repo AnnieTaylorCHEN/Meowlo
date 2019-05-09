@@ -155,6 +155,12 @@ a:active{
     background-color: red!important;
 }
 
+.product-buttons{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+}
+
 /*header*/
 
 .logo{

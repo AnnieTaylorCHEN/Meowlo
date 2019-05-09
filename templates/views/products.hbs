@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Meowlo | Products</title>
+    <title>Meowlo | Products | Games</title>
     <link rel="icon" href="/img/meowlo-favicon.png">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/products.css">
@@ -12,6 +12,8 @@
 <body>
     <div class="main-content">
         {{>header}}
+    <!--products pages button-->
+        {{>products}}
     <!--The Hangman Game-->
         <section class="hangman">
             <div class="hangman__info">
@@ -26,25 +28,7 @@
                 <button id="reset" class="button">Reset</button>
             </div>
         </section>
-    <!--The browser-based to-do list-->
-        <section>
-            <div class="todo">
-                <h1>Browser-based To-to List</h1>
-                <p>Write your to-do list, nobody else will see those but you (unless you share devices with others!) as this will be saved in your browser only.</p>
-                <div class="actions">
-                    <input id ="search-text" class="input" type="text" placeholder="search your todo">
-                    <label class="checkbox">
-                        <input id="hide-completed" type="checkbox">Hide Completed Tasks
-                    </label>
-                </div>
-
-                <div id="todos"></div>
-                <form id="new-todo">
-                    <input id="input-text" class="input" type="text" placeholder="type a new list for todos" name="text">
-                    <button id="todo-button" class="button" type="submit">Add new item</button>
-                </form>
-            </div>
-        </section>
+ 
     <!--The Meow Song Maker-->
       <section class="meow">
         <div class="meow__info">
@@ -75,8 +59,6 @@
 
     {{>footer}}
     <script src="js/hangman.js"></script>
-    <script src="js/uuidv4.js"></script>
-    <script src="js/todo.js"></script>
     <script src="js/meow.js"></script>
 </body>
 </html>
