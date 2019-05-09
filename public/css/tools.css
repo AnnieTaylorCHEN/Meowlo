@@ -75,3 +75,106 @@
         flex-direction: row;
     }
 }
+
+/*Meowlo Clock*/
+.meowlo-clock{
+    font-size: 2rem;
+    background: linear-gradient(to right, rgba(242, 189, 92, 1), rgba(242, 226, 196, 1));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.clock{
+    width: 250px;
+    height: 250px;
+    background-color: hsla(0, 100%, 100%, .8);
+    background-image: url(/img/meowlo-logo.svg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    background-size: contain;
+    border-radius: 50%;
+    border: 20px solid white;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.clock::after{
+    content: '';
+    position: absolute;
+    background-color: black;
+    border-radius: 50%;
+    z-index: 11;
+    width: 18px;
+    height: 18px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.number{
+    --rotation: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+}
+
+.clock .number1{--rotation: 30deg;}
+.clock .number2{--rotation: 60deg;}
+.clock .number3{--rotation: 90deg;}
+.clock .number4{--rotation: 120deg;}
+.clock .number5{--rotation: 150deg;}
+.clock .number6{--rotation: 180deg;}
+.clock .number7{--rotation: 210deg;}
+.clock .number8{--rotation: 240deg;}
+.clock .number9{--rotation: 270deg;}
+.clock .number10{--rotation: 300deg;}
+.clock .number11{--rotation: 330deg;}
+
+.clock .hand{
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    border: 1px solid white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transform-origin: bottom;
+    z-index: 10;
+    transform: translateX(-50%) rotate(calc(var(--rotation)* 1deg));
+}
+
+.clock .hour {
+    width: 15px;
+    height: 35%;
+    background-color: black;
+}
+
+.clock .minute {
+    width: 12px;
+    height: 40%;
+    background-color: black;
+}
+
+.clock .second {
+    width: 4px;
+    height: 47%;
+    background-color: red;
+}
+
+@media only screen and (min-width: 500px){
+
+    .meowlo-clock{
+        font-size: 3.5rem;
+    }
+
+    .clock{
+        width: 500px;
+        height: 500px;
+    }
+
+}
