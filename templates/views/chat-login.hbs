@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Meowlo | Chat Login</title>
+    <link rel="icon" href="/img/meowlo-favicon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/chat.css">
+</head>
+
+<body>
+    
+    {{>header}}
+
+    {{>products}}
+
+    <section class="fullscreen-bg">
+        <h1>Welcome!</h1>
+        <div class="login-form">
+           <form class="input-group" action="/chat.html">
+               <label>Name</label>
+               <input type="text" name="username" placeholder="type your display name" required>
+               <label>Room</label>
+               <input type="text" name="room" placeholder="type the room you want to enter" required>
+               <button class="button">Join</button>
+           </form>
+       </div>
+    
+    </section>
+          
+    {{>footer}}
+
+</body>
+</html>
