@@ -123,6 +123,10 @@
     font-size: 0.9rem;
 }
 
+#send-location {
+    margin-top: 0.8rem;
+    width: 50%;
+}
 /* Chat Sidebar Styles */
 
 .room-title {
@@ -154,6 +158,11 @@
     .compose {
         display: flex;
         flex-direction: row;
+    }
+
+    #send-location {
+        margin-top: 0;
+        width: inherit;
     }
 
     .chat__back-home{
