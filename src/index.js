@@ -140,6 +140,10 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(port, () => {
+// app.listen(port, () => {
+//     console.log('Server is up on the port ' + port)
+// })
+
+server.listen(port, () => {
     console.log('Server is up on the port ' + port)
 })
