@@ -56,10 +56,6 @@
 }
 
 .chat__sidebar {
-    height: 100vh;
-    background: var(--light-yellow);
-    width: 225px;
-    overflow-y: scroll;
     display: none;
 }
 
@@ -153,6 +149,10 @@
 
     .chat__sidebar{
         display: block;
+        height: 100vh;
+        background: var(--light-yellow);
+        min-width: 225px;
+        overflow-y: scroll;
     }
 
     .compose {
