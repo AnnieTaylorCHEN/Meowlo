@@ -16,6 +16,7 @@ const forecast = require('./utils/forecast')
 const { generateMessage, generateLocationMessage } = require('./utils/messages')
 const { addUser, removeUser, getUser, getUsersInRoom } = require('./utils/chatusers')
 
+
 const app = express()
 const server = http.createServer(app)
 const io = socketio(server)
@@ -42,8 +43,10 @@ io.on('connection', (socket) => {
         }
         socket.join(user.room)
 
-        socket.emit('message',generateMessage('Admin','Welcome!'))
-        socket.broadcast.to(user.room).emit('message', generateMessage('Admin', `${user.username} has joined!`))
+        socket.emit('message',generateMessage('Meowlo-bot','Welcome! Invite your friends to the same room to chat with each other!'))
+
+        socket.broadcast.to(user.room).emit('message', generateMessage('Meowlo-bot', `${user.username} has joined!`))
+
         io.to(user.room).emit('roomData', {
             room: user.room,
             users: getUsersInRoom(user.room)
@@ -57,8 +60,10 @@ io.on('connection', (socket) => {
         const filter = new Filter()
 
         if (filter.isProfane(message)){
+            socket.emit('message', generateMessage('Meowlo-bot', 'Profanity is not allowed!'))
             return callback('Profanity is not allowed!')
         }
+
         io.to(user.room).emit('message', generateMessage(user.username, message))
         callback()
     })
@@ -73,7 +78,7 @@ io.on('connection', (socket) => {
         const user = removeUser(socket.id)
 
         if (user) {
-            io.to(user.room).emit('message', generateMessage('Admin', `${user.username} has left!`)) 
+            io.to(user.room).emit('message', generateMessage('Meowlo-bot', `${user.username} has left!`)) 
             io.to(user.room).emit('roomData', {
                 room: user.room,
                 users: getUsersInRoom(user.room)
@@ -81,6 +86,8 @@ io.on('connection', (socket) => {
         }
     })
 })
+
+//Webpage routes
 
 app.get('', (req, res) => {
     res.render('index', {
@@ -140,10 +147,7 @@ app.get('*', (req, res) => {
     })
 })
 
-// app.listen(port, () => {
-//     console.log('Server is up on the port ' + port)
-// })
-
+//port
 server.listen(port, () => {
     console.log('Server is up on the port ' + port)
 })
