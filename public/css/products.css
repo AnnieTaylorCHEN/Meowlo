@@ -177,7 +177,7 @@
 
 /*the meow song maker*/
 .meow {
-    background-image: url(/img/meowsong.jpg);
+    background-image: url('../img/meowsong.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
