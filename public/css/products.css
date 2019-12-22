@@ -1,3 +1,162 @@
+/*Meowmory Game*/
+#meowmory h1 {
+    padding: 1em;
+}
+
+.meowmory-bg {
+    background-image: url('../img/meowmory-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 1200px;
+    width: 100%;
+}
+
+.overlay-text {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    color:hsla(14, 12%, 22%, 1)
+}
+  
+  .overlay-text.visible {
+    display: flex;
+    flex-direction: column;
+    animation: overlay-grow 500ms forwards;
+  }
+
+  @keyframes overlay-grow {
+    from {
+      background-color:hsla(132, 7%, 57%, 1);
+      font-size: 0;
+    }
+    to {
+      background-color:hsla(132, 7%, 57%, 0.7);
+      font-size: 3em;
+    }
+  }
+
+  .game-container {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 10px;
+    margin: 1em;
+    justify-content: center;
+    perspective: 500px;
+  }
+
+  .game-info-container {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #time-remaining, #flips {
+      color: var(--blue);
+  }
+
+  .card {
+    position: relative;
+    height: 175px;
+    width: 125px;
+  }
+  
+  .card:hover {
+    cursor: url('../img/meowlo-paw.svg'), auto;
+  }
+  
+  .card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    border-width: 1px;
+    border-style: solid;
+    transition: transform 500ms ease-in-out;
+  }
+  
+  .card.visible .card-back {
+    transform: rotateY(-180deg);
+  }
+  
+  .card.visible .card-front {
+    transform: rotateY(0)
+  }
+  
+  .card.matched .card-value {
+    animation: dance 1s linear infinite 500ms;
+  }
+
+@keyframes dance {
+    0%, 100%  {
+      transform: rotate(0);
+    }
+    25% {
+      transform: rotate(-30deg);
+    }
+    75% {
+      transform: rotate(30deg);
+    }
+  }
+
+  .meowface {
+    align-self: center;
+    width: 80%;
+    transform: translateY(-10px);
+    transition: transform 100ms ease-in-out;
+  }
+
+  .card-back {
+    background-color: white;
+    border-color: hsla(132, 7%, 57%, 1);
+  }
+
+  .card-back:hover .meowface {
+    transform: translateY(0)
+  }
+  
+  .card-front {
+    background-color: hsla(132, 7%, 57%, 0.7);
+    transform: rotateY(180deg);
+  }
+  
+  .card-value {
+    width: 80%;
+    transform: scale(.9);
+    transition: transform 100ms ease-in-out;
+  }
+  
+  .card-front:hover .card-value {
+    transform: scale(1);
+  }
+
+  @media (max-width: 600px) {
+    .meowmory-bg {
+        height: 700px;
+    }
+  
+    .game-info-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card {
+        height: 80px;
+        width: 60px;
+    }
+  }
+
 /*hangman game*/
 .hangman {
     background-image: url('../img/game-bg.jpg');
@@ -133,4 +292,4 @@
 
 }
 
-/*Meowmory Game*/
+

@@ -8,6 +8,7 @@
     <link rel="icon" href="/img/meowlo-favicon.png">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/products.css">
+    <script async src="js/meowmory.js"></script>
     <script defer src="js/hangman.js"></script>
     <script defer src="js/meow.js"></script>
 </head>
@@ -16,68 +17,27 @@
         {{>header}}
     <!--products pages button-->
         {{>products}}
-    <!--The Hangman Game-->
-        <section class="hangman">
-            <div class="hangman__info">
-                <h1>The Hangman Game</h1>
-                <p>Press your paws on keyboard to make a guess!</p>
-                <p>Sorry this game won't work on mobile. Switch to desktop to play!</p>
-            </div>
-
-            <div class="wrapper">
-                <div id="hangman-word" class="puzzle"></div>
-                <div id ="hangman-status"></div>
-                <button id="reset" class="button">Reset</button>
-            </div>
-        </section>
- 
-    <!--The Meow Song Maker-->
-      <section id="meow" class="meow">
-        <div class="meow__info">
-          <h1>The Meow Song Maker</h1>
-          <h3>Tap your paws to make a kitty song!</h3>
-        </div>
-
-        <div class="meow-balls"></div>
-
-        <div class="keys">
-          <div class="key1">
-            <audio src="./sounds/meow1.mp3" class="sound"></audio>
-          </div>
-          <div class="key2">
-            <audio src="./sounds/meow2.mp3" class="sound"></audio>
-          </div>
-          <div class="key3">
-            <audio src="./sounds/meow3.mp3" class="sound"></audio>
-          </div>
-          <div class="key4">
-            <audio src="./sounds/meow4.mp3" class="sound"></audio>
-          </div>
-          <div class="key5">
-            <audio src="./sounds/meow5.mp3" class="sound"></audio>
-          </div>
-        </div>
-      </section>
 
       {{!-- Meowmory Game --}}
-      <section class="meowmory-bg">
+      <section id="meowmory" class="meowmory-bg">
         <h1>Meowmory Game</h1>
-        <!-- Overlay  -->
-        <div class="overlay-text visible">
-            Let's begin! &#128516;
-        </div>
-        <div id="game-over-text" class="overlay-text">
-            Aww &#128556;
-        <span class="overlay-text-small">Click to Restart</span>
-        </div>
-        <div id="victory-text" class="overlay-text">
-            Yeah! &#129392;
-        <span class="overlay-text-small">Click to Restart</span>
-        </div>
+        
 
         <div class="game-container">
-            <!-- Game info -->
-            < class="game-info-container">
+            <!-- Overlay  -->
+            <div class="overlay-text visible">
+                Let's begin! &#128516;
+            </div>
+            <div id="game-over-text" class="overlay-text">
+                Aww &#128556;
+            <button class="button">Restart</button>
+            </div>
+            <div id="victory-text" class="overlay-text">
+                Yeah! &#129392;
+            <button class="button">Restart</button>
+            </div>
+        <!-- Game info -->
+            <div class="game-info-container">
               <h2>
                 Time <span id="time-remaining">60</span>
               </h2>
@@ -233,6 +193,49 @@
           </div>
 
     </section>
+
+    <!--The Hangman Game-->
+        <section id="hangman" class="hangman">
+            <div class="hangman__info">
+                <h1>The Hangman Game</h1>
+                <p>Press your paws on keyboard to make a guess!</p>
+                <p>Sorry this game won't work on mobile. Switch to desktop to play!</p>
+            </div>
+
+            <div class="wrapper">
+                <div id="hangman-word" class="puzzle"></div>
+                <div id ="hangman-status"></div>
+                <button id="reset" class="button">Reset</button>
+            </div>
+        </section i>
+ 
+    <!--The Meow Song Maker-->
+      <section id="meowsong" class="meow">
+        <div class="meow__info">
+          <h1>The Meow Song Maker</h1>
+          <h3>Tap your paws to make a kitty song!</h3>
+        </div>
+
+        <div class="meow-balls"></div>
+
+        <div class="keys">
+          <div class="key1">
+            <audio src="./sounds/meow1.mp3" class="sound"></audio>
+          </div>
+          <div class="key2">
+            <audio src="./sounds/meow2.mp3" class="sound"></audio>
+          </div>
+          <div class="key3">
+            <audio src="./sounds/meow3.mp3" class="sound"></audio>
+          </div>
+          <div class="key4">
+            <audio src="./sounds/meow4.mp3" class="sound"></audio>
+          </div>
+          <div class="key5">
+            <audio src="./sounds/meow5.mp3" class="sound"></audio>
+          </div>
+        </div>
+      </section>
 
     {{>footer}}
     
