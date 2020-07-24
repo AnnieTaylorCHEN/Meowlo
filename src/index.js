@@ -1,3 +1,4 @@
+const path = require('path')
 if (process.env.NODE_ENV == 'production'){
     require('dotenv').config({ path: `${__dirname}/../.env` })
 }
@@ -5,7 +6,6 @@ if (process.env.NODE_ENV == 'production'){
 const mapboxKey = process.env.MAPBOX_KEY
 const darkskyKey = process.env.DARKSKY_KEY
 
-const path = require('path')
 const http = require('http')
 const express = require('express')
 const hbs = require('hbs')
