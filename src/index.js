@@ -1,6 +1,6 @@
 const path = require('path')
 if (process.env.NODE_ENV == 'production'){
-    require('dotenv').config({ path: `${__dirname}/../.env` })
+    require('dotenv').config({ path: `${__dirname}/./../.env` })
 }
 
 const mapboxKey = process.env.MAPBOX_KEY
