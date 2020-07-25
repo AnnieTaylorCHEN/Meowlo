@@ -3,7 +3,7 @@
 ![Screenshot of the site](./docs/images/meowlo-screenshot.png)
 
 ## Live demo 
-[Meowlo](https://meowlo.herokuapp.com/)
+[Meowlo](https://meowlo.annietaylorchen.com/)
 
 ## Tech and Micro-services used
 - Node.js (Express.js)
