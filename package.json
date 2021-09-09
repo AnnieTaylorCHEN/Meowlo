@@ -20,8 +20,8 @@
   "devDependencies": {
     "dotenv": "^7.0.0",
     "nodemon": "^2.0.3",
-    "webpack": "^4.43.0",
+    "webpack": "^5.52.0",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^4.1.1"
   }
 }
