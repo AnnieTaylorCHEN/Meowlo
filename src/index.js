@@ -120,6 +120,12 @@ app.get('/products/chat-login', (req, res) => {
     })
 })
 
+app.get('/register', (req, res) => {
+    res.render('register', {
+        title: 'Meowlo Register'
+    })
+})
+
 app.get('/weather', async (req, res) => {
     if (!req.query.address){
         return res.send({
